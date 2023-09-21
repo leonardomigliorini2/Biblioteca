@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Biblioteca</title>
+        <style>
+            .vl{
+                display: block;
+                padding: 10px 10px ;
+                background-color: aqua;
+                margin-left: 500px;
+                margin-right: 660px;
+                margin-top: 250px;
+            }
+            .mensajeExito{
+                color:aqua;
+            }
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+            <div class="container-fluid">
+                <a class="nav-link" id="navbarDropdown" th:href="@{/logout}"> Cerrar Cesion</a>
+
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Libros
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <li><a class="dropdown-item" th:href="@{/libro/lista}">Lista</a></li>
+                        <li><a class="dropdown-item" th:href="@{/libro/registrar}">Crear Libro</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Autor
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <li><a class="dropdown-item" th:href="@{/autor/lista}">Lista</a></li>
+                        <li><a class="dropdown-item" th:href="@{/autor/registrar}">Crear Autor</a></li>
+                    </ul>
+                </div>             
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Editorial
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <li><a class="dropdown-item" th:href="@{/editorial/lista}">Lista</a></li>
+                        <li><a class="dropdown-item" th:href="@{/editorial/registrar}">Crear Editorial</a></li>
+                    </ul>
+                </div>
+                <div>
+                <a class="nav-link" id="navbarDropdown" th:href="@{/perfil}">Editar Perfil</a>
+                </div>
+                <div>
+                <a class="nav-link" id="navbarDropdown" th:href="@{/admin/usuarios}">Cambiar Rol</a>
+                </div>
+                </div>
+        </div>
+
+    </nav>
+    <section>
+        <div class="container">
+            <img class="logo" th:src="@{/imagen/perfil/__${session.usuariosession.id}__}">
+        </div>
+    </section>
+    <div th:if="${exito !=null}" class="mensajeExito">
+        <h4>!Exito!</h4>
+        <p4 th:text="${exito}"></p4>
+    </div>
+    <div th:if="${exitoAutor !=null}" class="mensajeExito">
+        <h4>!Exito!</h4>
+        <p4 th:text="${exitoAutor}"></p4>
+    </div>
+    <div th:if="${exitoEditorial !=null}" class="mensajeExito">
+        <h4>!Exito!</h4>
+        <p4 th:text="${exitoEditorial}"></p4>
+    </div>
+    <div th:if="${exitoLibro !=null}" class="mensajeExito">
+        <h4>!Exito!</h4>
+        <p4 th:text="${exitoLibro}"></p4>
+    </div>
+    <div th:if="${exito !=null}" class="mensajeExito">
+        <h4>!Exito!</h4>
+        <p4 th:text="${exito}"></p4>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>  
+</body>
+</html>
